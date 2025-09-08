@@ -7,7 +7,6 @@
  */
 import java.util.Scanner;
 public class HW2_1 {
-    private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         int a = readInt("Enter the first number: ");
         int b = readInt("Enter the second number: ");

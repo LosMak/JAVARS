@@ -14,13 +14,12 @@ public class HW4 {
 необходимо вывести все нечетные числа из массива больше 5
 */
             if (arraybox > 5)
-                System.out.println("больше 5  " + array[i]);
+                System.out.println(array[i] + " больше 5  ");
 /*Задача №3
 необходимо увеличить все значения массива на 15
-*/		int[] arram = {9, 2, 6, 4, 5, 12, 7, 8, 6};
-		for (int i = 0; i < arram.length; i++) {
-            int arraybox = arram[i] * 15;
-           	System.out.println("увеличить на 15 " + arraybox);			
+*/	
+            array[i] = array[i] + 15;
+            System.out.println("увеличено на 15--> " + array[i]);			
 			
 			
 		}

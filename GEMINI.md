@@ -8,7 +8,7 @@ This is a Java educational project, likely for a programming course. It's organi
 
 ### Sub-projects:
 
-*   **1_project:** Contains introductory Java exercises, covering basic syntax, variables, and control flow.
+* **1_project:** Contains introductory Java exercises, covering basic syntax, variables, and control flow.
 *   **2_project:** Contains more advanced exercises, including arrays and more complex logic.
 *   **Codewars:** Contains solutions to problems from the Codewars platform.
 
@@ -46,7 +46,7 @@ java Main
 
 ## Development Conventions
 
-*   The code is written in Java.
-*   Comments are in Russian and describe the tasks for each file.
-*   The code is organized into simple classes and methods.
-*   The project follows standard Java naming conventions.
+* The code is written in Java.
+* Comments are in Russian and describe the tasks for each file.
+* The code is organized into simple classes and methods.
+* The project follows standard Java naming conventions.

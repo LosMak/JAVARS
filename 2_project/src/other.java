@@ -3,7 +3,6 @@ public class other {
         int a = 24;
         //String evenOrOdd = (a % 2 == 0) ? "even" : "odd";
 
-        String evenOrOdd;
         if (a % 2 == 0) {
             System.out.println("Even");
         } else {
