@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f654c46e-a9e3-4d60-9f25-365d91a4303e" name="Changes" comment="" />
+    <list default="true" id="f654c46e-a9e3-4d60-9f25-365d91a4303e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2_project/HW3_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/HW3_2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2_project/HW4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/HW4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2_project/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2_project/STR2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/STR2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2_project/Str1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/Str1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2_project/other.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/other.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2_project/other2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/other2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HW4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HW4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/STR2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/STR2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Str1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Str1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/other.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/other.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +32,21 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LosMak"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/LosMak/JAVARS.git",
+    "accountId": "161432cf-5ffe-40e0-b0d8-164b622147af"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -29,6 +59,7 @@
   "keyToString": {
     "Application.HW3_2.executor": "Run",
     "Application.HW4.executor": "Run",
+    "Application.HW4_4.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.STR2.executor": "Run",
     "Application.Str1.executor": "Run",
@@ -36,11 +67,14 @@
     "Application.other2.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "D:/!RoverSchool/java/2_project/src/Main.java"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.HW4">
+  <component name="RunManager" selected="Application.HW4_4">
     <configuration name="HW3_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HW3_2" />
       <module name="2_project" />
@@ -55,15 +89,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="STR2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="STR2" />
+    <configuration name="HW4_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HW4_4" />
       <module name="2_project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Str1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Str1" />
+    <configuration name="STR2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="STR2" />
       <module name="2_project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HW4_4" />
         <item itemvalue="Application.HW4" />
+        <item itemvalue="Application.other2" />
         <item itemvalue="Application.HW3_2" />
         <item itemvalue="Application.STR2" />
-        <item itemvalue="Application.other2" />
-        <item itemvalue="Application.Str1" />
       </list>
     </recent_temporary>
   </component>

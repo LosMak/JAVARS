@@ -17,8 +17,7 @@ public class Str1 {
             System.out.println(str2);
             System.out.println(str1 == str2);
             System.out.println(str1.equals(str2)); //Если начинается с большой буквы, то используем equals
-                                                   // equals сравнивает содержимое объектов
-            Integer u = Integer.valueOf(12);
+            Integer u = Integer.valueOf(12);// equals сравнивает содержимое объектов
             Integer i1 = Integer.valueOf(12);
             System.out.println(u==i1);
         }

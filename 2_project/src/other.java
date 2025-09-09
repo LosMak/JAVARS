@@ -8,10 +8,5 @@ public class other {
         } else {
             System.out.println("Odd");
         }
-//        if (a % 2 == 0) {
-//            System.out.println("Even");
-//        } else {
-//            System.out.println("Odd");
-//        }
     }
 }
