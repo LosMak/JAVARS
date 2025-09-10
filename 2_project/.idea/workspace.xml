@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f654c46e-a9e3-4d60-9f25-365d91a4303e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2_project/HW3_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/HW3_2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2_project/HW4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/HW4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2_project/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2_project/STR2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/STR2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2_project/Str1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/Str1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2_project/other.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/other.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2_project/other2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2_project/other2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HW4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HW4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/STR2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/STR2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Str1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Str1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/other.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

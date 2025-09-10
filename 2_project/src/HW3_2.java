@@ -28,11 +28,11 @@ public class HW3_2 {
 			System.out.println(i);
 		}
 		// Вариант 2: с использованием if (шаг цикла 1) - закомментирован для тестов
-		/*for (int i = 40; i <= 60; +i = i + 1) {
+		for (int i = 40; i <= 60; i = i + 1) {
 			if (i % 4 == 0) {
 				System.out.println(i);
 			}
-		}*/
+		}
     }
 
 }

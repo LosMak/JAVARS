@@ -20,8 +20,8 @@ public class HW2_1 {
 //      System.out.println(a / 2 * 2 && a) ;// оператор И
 //      System.out.println(a / 2 * 2 || a) ;// оператор ИЛИ
 //      System.out.println(a / 2 * 2 ! a) ;// оператор НЕ
-        System.out.println(a % 2 == 0);//проверка на четность
-        System.out.println(b % 2 == 0);
+        System.out.print("Четное число ли число А:");//проверка на четность
+        System.out.println(a % 2 == 0);
     }
     static Scanner keyboard = new Scanner(System.in);
     private static int readInt(String message) {

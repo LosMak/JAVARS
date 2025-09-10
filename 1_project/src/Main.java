@@ -3,21 +3,18 @@
 public class Main {
 
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        /*int x = 55;
+        int x = 55;
         int y = 40;
         if (x + y < 50 || (y > 50 || x > 10) ) {
             System.out.print("X меньше 50");
         } else{
             System.out.println(", but more 30");
-        } */
+        }
         for (int i = 0; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+
             System.out.println("i = " + i);
         }
-        int x = 100;
+
         while (x == 100) {
             System.out.println(x);
             x = x + 1;

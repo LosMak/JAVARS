@@ -9,11 +9,11 @@ public class STR2 {
         System.out.println(str.substring(str.length() - 3));
         System.out.println(str.substring(0, 3));// получение подстроки
         System.out.println(str.indexOf('A')); // кавычки тип char выводит число с какого символа начинается
-        System.out.println(str.lastIndexOf('A'));// Последнее вхожднения
+        System.out.println(str.lastIndexOf('A'));// Последнее вхождение
         System.out.println(str.indexOf("ABC")); //""- Строка
         System.out.println(str.indexOf("ABCX"));// вернет -1 не найдено
         System.out.println(str.contains("ABC")); //вернёт boolean находит выражение true
-        System.out.println(str.contains("ABCX")); //вернёт boolean ненаходит выражение  false
+        System.out.println(str.contains("ABCX")); //вернёт boolean не находит выражение  false
 		System.out.println(str.startsWith("a")); //вернёт boolean начинается строка   false
 		System.out.println(str.endsWith("k")); //вернёт boolean заканчивается   true
 		System.out.println(str.replace ("A" , "X")); //замена буквы А на X
