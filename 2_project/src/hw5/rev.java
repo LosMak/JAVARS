@@ -17,17 +17,24 @@ public class rev {
 //%%: literal %
 //%n: platform-independent newline
 // Person
-        String name = "Alex";
-        int age = 40;
-        char sex = 'm';
-        printPerson(name, age, sex);
-
-        //Person object
-        String ton = new String("TOM");
-        ton.length();
-        int[] a = {1, 2, 3};
+ //       array.length;
         Person alex = new Person();
-        alex.name;
+ //       alex.name;
+        alex.name = "Alex";
+        alex.age = 40;
+        alex.sex = 'm';
+        alex.weight= 70.33;
+        Person olga = new Person();
+        olga.name = "Olga";
+        olga.age = 20;
+        olga.sex = 'f';
+        olga.weight=42.3;
+
+//        printPerson(alex.name, alex.age, alex.sex);
+//        printPerson(olga.name, olga. age, olga.sex);
+
+        alex.printPerson();
+        olga.printPerson();
 
     }
         static void printPerson(String name, int age, char sex) {
