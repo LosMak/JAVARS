@@ -36,6 +36,8 @@ public class rev {
         alex.printPerson();
         olga.printPerson();
 
+        Person.name
+
     }
         static void printPerson(String name, int age, char sex) {
             System.out.printf("Person: %s, age: %d, sex: %s%n", name, age, sex);
