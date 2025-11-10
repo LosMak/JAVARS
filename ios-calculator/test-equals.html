@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тест кнопки равно</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .test-btn { padding: 10px 20px; margin: 5px; background: #ff8c00; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .test-btn:hover { background: #ff7300; }
+        #result { margin: 20px 0; padding: 10px; background: #f0f0f0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Тест кнопки равно</h1>
+    <div>
+        <button class="test-btn" onclick="test1()">Тест 1: 5 + 3 =</button>
+        <button class="test-btn" onclick="test2()">Тест 2: 10 × 5 =</button>
+        <button class="test-btn" onclick="test3()">Тест 3: Проверка DOM</button>
+    </div>
+    <div id="result">Готов к тестам</div>
+
+    <script>
+        function test1() {
+            document.getElementById('result').innerHTML = 'Выполняю: 5 + 3 = ?';
+            setTimeout(() => {
+                const btn = document.querySelector('[data-action="equals"]');
+                if (btn) {
+                    btn.click();
+                    setTimeout(() => {
+                        document.getElementById('result').innerHTML = 'Результат: ' + document.querySelector('.current-operand').textContent;
+                    }, 100);
+                } else {
+                    document.getElementById('result').innerHTML = 'Кнопка равно не найдена!';
+                }
+            }, 100);
+        }
+
+        function test2() {
+            document.getElementById('result').innerHTML = 'Выполняю: 10 × 5 = ?';
+            setTimeout(() => {
+                const btn = document.querySelector('[data-action="equals"]');
+                if (btn) {
+                    btn.click();
+                    setTimeout(() => {
+                        document.getElementById('result').innerHTML = 'Результат: ' + document.querySelector('.current-operand').textContent;
+                    }, 100);
+                } else {
+                    document.getElementById('result').innerHTML = 'Кнопка равно не найдена!';
+                }
+            }, 100);
+        }
+
+        function test3() {
+            const equalsBtn = document.querySelector('[data-action="equals"]');
+            const display = document.querySelector('.current-operand');
+
+            let result = '<h3>Диагностика:</h3>';
+            result += 'Кнопка равно: ' + (equalsBtn ? 'НАЙДЕНА' : 'НЕ НАЙДЕНА') + '<br>';
+            result += 'Дисплей: ' + (display ? 'НАЙДЕН' : 'НЕ НАЙДЕН') + '<br>';
+            result += 'Текст дисплея: ' + (display ? display.textContent : 'N/A') + '<br>';
+
+            if (equalsBtn) {
+                result += 'onclick обработчик: ' + (equalsBtn.onclick ? 'ЕСТЬ' : 'НЕТ') + '<br>';
+                result += 'Класс кнопки: ' + equalsBtn.className + '<br>';
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

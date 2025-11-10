@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отладка калькулятора</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .debug-btn { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .debug-btn:hover { background: #0056b3; }
+        .debug-btn.danger { background: #dc3545; }
+        .debug-btn.danger:hover { background: #a71e2a; }
+        .debug-btn.success { background: #28a745; }
+        .debug-btn.success:hover { background: #1e7e34; }
+        #debug-output { margin: 20px 0; padding: 10px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; max-height: 400px; overflow-y: auto; }
+        .status { padding: 5px 10px; margin: 2px; border-radius: 3px; display: inline-block; }
+        .status.ok { background: #d4edda; color: #155724; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        .calculator-link { position: fixed; top: 10px; right: 10px; padding: 10px 20px; background: #ff8c00; color: white; text-decoration: none; border-radius: 5px; }
+        #calculator-container { display: flex; gap: 20px; align-items: flex-start; }
+        #calculator-frame {
+            width: 340px; /* Ширина как у калькулятора + отступы */
+            height: 600px; /* Высота как у калькулятора */
+            border: 2px solid #ccc;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="calculator-link">← Вернуться к калькулятору</a>
+    <h1>Отладка калькулятора</h1>
+
+    <div>
+        <h2>Проверка элементов DOM</h2>
+        <button class="debug-btn" onclick="checkDOM()">Проверить DOM элементы</button>
+        <button class="debug-btn" onclick="checkButtons()">Проверить кнопки</button>
+        <button class="debug-btn success" onclick="testCalculation()">Тест: 5 + 3 = ?</button>
+        <button class="debug-btn success" onclick="testCalculation2()">Тест: 10 × 5 = ?</button>
+        <div id="calculator-container">
+            <div>
+                <h2>Панель управления</h2>
+                <button class="debug-btn" onclick="checkDOM()">Проверить DOM</button>
+                <button class="debug-btn" onclick="checkButtons()">Проверить кнопки</button>
+                <hr>
+                <button class="debug-btn success" onclick="testCalculation()">Тест: 5 + 3 = ?</button>
+                <button class="debug-btn success" onclick="testCalculation2()">Тест: 10 × 5 = ?</button>
+                <hr>
+                <button class="debug-btn danger" onclick="clearCalc()">Очистить калькулятор</button>
+                <button class="debug-btn" onclick="clearDebug()">Очистить лог</button>
+            </div>
+            <div>
+                <h2>Калькулятор</h2>
+                <iframe id="calculator-frame" src="index.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>Ручной тест</h2>
+        <button class="debug-btn" onclick="simulateClick('5')">Нажать 5</button>
+        <button class="debug-btn" onclick="simulateClick('+')">Нажать +</button>
+        <button class="debug-btn" onclick="simulateClick('3')">Нажать 3</button>
+        <button class="debug-btn success" onclick="simulateClick('equals')">Нажать =</button>
+        <br>
+        <button class="debug-btn danger" onclick="clearCalc()">Очистить</button>
+        <button class="debug-btn" onclick="clearDebug()">Очистить отладку</button>
+    </div>
+
+    <h2>Лог отладки</h2>
+    <div id="debug-output">
+        <div class="status ok">Отладка загружена</div>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('calculator-frame');
+        // Функция для получения document из iframe
+        const calculatorDocument = () => {
+            return iframe.contentWindow.document;
+        }
+
+        let calculatorInstance = null;
+
+        function log(message, type = 'info') {
+            const output = document.getElementById('debug-output');
+            const time = new Date().toLocaleTimeString();
+            const div = document.createElement('div');
+            div.innerHTML = `[${time}] ${message}`;
+            div.className = 'status ' + (type === 'error' ? 'error' : 'ok');
+            output.appendChild(div);
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function checkDOM() {
+            const elements = [
+                '.calculator',
+                '.display',
+                '.current-operand',
+                '.previous-operand',
+                '.buttons',
+                '[data-action="equals"]',
+                '.btn-equals'
+            ];
+
+            elements.forEach(selector => {
+                const el = document.querySelector(selector);
+                const el = calculatorDocument().querySelector(selector);
+                if (el) {
+                    log(`✓ ${selector}: найден (${el.tagName}${el.className ? '.' + el.className : ''})`);
+                } else {
+                    log(`✗ ${selector}: НЕ НАЙДЕН`, 'error');
+                }
+            });
+        }
+
+        function checkButtons() {
+            const buttons = document.querySelectorAll('.btn');
+            const buttons = calculatorDocument().querySelectorAll('.btn');
+            log(`Всего кнопок: ${buttons.length}`);
+
+            buttons.forEach((btn, index) => {
+                const action = btn.dataset.action || 'нет действия';
+                const text = btn.textContent.trim();
+                log(`Кнопка ${index + 1}: "${text}" (действие: ${action})`);
+
+                // Проверяем обработчики
+                if (btn.onclick) {
+                    log(`  ✓ onclick: есть`);
+                } else {
+                    log(`  ✗ onclick: отсутствует`, 'error');
+                // Проверить наличие обработчиков сложно, но можно проверить, что кнопка кликабельна
+                try {
+                    btn.click(); // Просто симулируем клик, чтобы убедиться, что нет ошибок
+                    log(`  ✓ Кнопка кликабельна`);
+                } catch (e) {
+                    log(`  ✗ Ошибка при клике: ${e.message}`, 'error');
+                }
+            });
+        }
+
+        function simulateClick(action) {
+            log(`Симуляция нажатия: ${action}`);
+
+            let selector = '';
+            if (action === 'equals') {
+                selector = '[data-action="equals"]';
+            } else {
+                selector = `[data-action="${action}"]`;
+            }
+
+            const button = document.querySelector(selector);
+            const button = calculatorDocument().querySelector(selector);
+            if (button) {
+                log(`Найдена кнопка: ${button.tagName}.${button.className}`);
+                button.click();
+                log(`Клик выполнен`);
+
+                // Показываем состояние калькулятора через 100мс
+                setTimeout(() => {
+                    const current = document.querySelector('.current-operand');
+                    const previous = document.querySelector('.previous-operand');
+                    const current = calculatorDocument().querySelector('.current-operand');
+                    const previous = calculatorDocument().querySelector('.previous-operand');
+                    if (current) log(`Текущий операнд: "${current.textContent}"`);
+                    if (previous) log(`Предыдущий операнд: "${previous.textContent}"`);
+                }, 100);
+            } else {
+                log(`Кнопка не найдена: ${selector}`, 'error');
+            }
+        }
+
+        function testCalculation() {
+            log('=== ТЕСТ: 5 + 3 = ? ===');
+
+            // Очищаем калькулятор сначала
+            simulateClick('clear');
+
+            setTimeout(() => simulateClick('5'), 100);
+            setTimeout(() => simulateClick('+'), 200);
+            setTimeout(() => simulateClick('3'), 300);
+            setTimeout(() => {
+                log('Нажимаем =');
+                simulateClick('equals');
+            }, 400);
+
+            setTimeout(() => {
+                const result = document.querySelector('.current-operand').textContent;
+                const result = calculatorDocument().querySelector('.current-operand').textContent;
+                log(`Результат: "${result}"`);
+                if (result === '8') {
+                    log('✓ ТЕСТ ПРОЙДЕН: результат = 8');
+                } else {
+                    log(`✗ ТЕСТ НЕ ПРОЙДЕН: ожидалось "8", получено "${result}"`, 'error');
+                }
+            }, 600);
+        }
+
+        function testCalculation2() {
+            log('=== ТЕСТ: 10 × 5 = ? ===');
+
+            setTimeout(() => {
+                simulateClick('1');
+                setTimeout(() => simulateClick('0'), 50);
+                setTimeout(() => simulateClick('×'), 100);
+                setTimeout(() => simulateClick('5'), 150);
+                setTimeout(() => simulateClick('equals'), 200);
+
+                setTimeout(() => {
+                    const result = document.querySelector('.current-operand').textContent;
+                    const result = calculatorDocument().querySelector('.current-operand').textContent;
+                    if (result === '50') {
+                        log('✓ ТЕСТ ПРОЙДЕН: результат = 50');
+                    } else {
+                        log(`✗ ТЕСТ НЕ ПРОЙДЕН: ожидалось "50", получено "${result}"`, 'error');
+                    }
+                }, 300);
+            }, 100);
+        }
+
+        function clearCalc() {
+            const clearBtn = document.querySelector('[data-action="clear"]');
+            const clearBtn = calculatorDocument().querySelector('[data-action="clear"]');
+            if (clearBtn) {
+                clearBtn.click();
+                log('Калькулятор очищен');
+            }
+        }
+
+        function clearDebug() {
+            document.getElementById('debug-output').innerHTML = '';
+        }
+
+        // Автоматическая проверка при загрузке
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('=== АВТОМАТИЧЕСКАЯ ДИАГНОСТИКА ===');
+                checkDOM();
+                checkButtons();
+            }, 500);
+        iframe.addEventListener('load', () => {
+            log('Калькулятор в iframe загружен. Можно начинать отладку.');
+            // setTimeout(() => {
+            //     log('=== АВТОМАТИЧЕСКАЯ ДИАГНОСТИКА ===');
+            //     checkDOM();
+            //     // checkButtons() лучше не вызывать автоматически, т.к. он кликает по всем кнопкам
+            // }, 500);
+        });
+    </script>
+</body>
+</html>
